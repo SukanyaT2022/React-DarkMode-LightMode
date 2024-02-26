@@ -3,35 +3,24 @@ import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
-
-  // let changeColor ={
-  //   color:'pink',
-  //   fontSize: '25px'
-  // }
   const [colorState,setColorState] = useState('black')
-  const [flag,setFlag] = useState(false);
 
-  useEffect(()=>{
-    flag?setColorState('red'):setColorState('black')
-  },[flag])
 
-  const switchHandler=()=>{
-    setFlag(!flag)
-    console.log(flag)
-  }
+  // const switchHandler=()=>{
+  //   setColorState((color) => color == "red"? "black":'red');
+  //   // colorState === "red"?setColorState("black"):setColorState('red')
+
+  // }
 
   return(
-<div>
- <label className={`switch ${colorState}`} onClick={switchHandler}>
-   <input type="checkbox"/>
-   <span className="slider round"></span>
- </label>
- <p style={{color:colorState}}>Bye Bye Winter!</p>
- {/* //color is inline css property */}
-</div>
-
+    <div clas>
+      <label className={`switch ${colorState}`} >
+        <input type="checkbox" onChange={switchHandler}/>
+        <span className="slider round"></span>
+      </label>
+      <p style={{color:colorState}}>Bye Bye Winter!</p>
+    </div>
   )
-
 }
 
 export default App;
